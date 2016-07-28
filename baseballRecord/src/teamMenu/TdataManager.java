@@ -10,32 +10,40 @@ import java.util.StringTokenizer;
 
 public class TdataManager {
 	Team[] teams = new Team[10];
-	
-	FileInputStream fis;
-	ObjectInputStream ois;
+	FileManager fm;
 	
 	public Team[] txtOpen() throws IOException{
-		FileReader fReader = new FileReader("야구 팀 정보.txt");
-		BufferedReader bReader = new BufferedReader(fReader);
-		String readLine = "";
-		int i = 0;
-		while ((readLine = bReader.readLine())!=null) {
-			StringTokenizer st = new StringTokenizer(readLine, "#");
-			
-			if (st.countTokens()==15) {
-				teams[i] = new Team(Double.parseDouble(st.nextToken()),st.nextToken(),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()),Double.parseDouble(st.nextToken()));
-				i++;
-			} else{
-				
-				System.out.println("누락된 정보가 있습니다. ");
-			}
-			
-			
-			
-		}
+		fm = new FileManager();
+		teams = fm.txtOpen();
 		return teams;
 		
 	}
+	
+	public Team[] serialOpen(){
+		fm = new FileManager();
+		teams = fm.serialOpen();
+		return teams;
+		
+	}
+	
+	public void fileSave(){
+		
+		fm.fileSave(teams);
+	}
+	
+	public Team[] teamDelete(int no){
+		for (int i = no-1; i < teams[0].getSize()-1; i++) {
+			teams[i+1].setNum(teams[i+1].getNum()-1);
+			teams[i] = teams[i+1];
+			
+		}
+		System.out.println(teams[0].getSize());
+		teams[0].setSize(teams[0].getSize()-1);
+		System.out.println(teams[0].getSize());
+		return teams;
+	}
+	
+	
 	
 	
 	

@@ -1,7 +1,11 @@
 package teamMenu;
 
-public class Team {
-	private double count, size, num, game, win, draw, 
+import java.io.Serializable;
+
+public class Team implements Serializable{
+	
+	private static int count, size;
+	private double  num, game, win, draw, 
 		lose, winningRate, score, homeRun, stealAbase, 
 		fourBall, strikeOut, batAver, onBaseAver, slugAver;
 
@@ -30,22 +34,52 @@ public class Team {
 		this.count++;
 		this.size++;
 	}
+	
+//	public Team(Team team){
+//		super();
+//		this.num = team.getNum();
+//		this.game = team.getGame();
+//		this.win = team.getWin();
+//		this.draw = team.getDraw();
+//		this.lose = team.getLose();
+//		this.winningRate = team.getWinningRate();
+//		this.score = team.getScore();
+//		this.homeRun = team.getHomeRun();
+//		this.stealAbase = team.getStealAbase();
+//		this.fourBall = team.getFourBall();
+//		this.strikeOut = team.getStrikeOut();
+//		this.batAver = team.getBatAver();
+//		this.onBaseAver = team.getOnBaseAver();
+//		this.slugAver = team.getSlugAver();
+//		this.teamName = team.getTeamName();
+//		
+//	}
 
-	public double getCount() {
+	
+
+	public int getCount() {
 		return count;
 	}
 
-	public void setCount(double count) {
+
+
+	public void setCount(int count) {
 		this.count = count;
 	}
 
-	public double getSize() {
+
+
+	public int getSize() {
 		return size;
 	}
 
-	public void setSize(double size) {
+
+
+	public void setSize(int size) {
 		this.size = size;
 	}
+
+
 
 	public double getNum() {
 		return num;
