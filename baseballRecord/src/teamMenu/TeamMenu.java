@@ -3,6 +3,8 @@ package teamMenu;
 import java.io.IOException;
 import java.util.Scanner;
 
+import interfaces.Menu;
+
 public class TeamMenu implements Menu{
 	TmsgControl tmsg;
 	TdataManager tdmg;

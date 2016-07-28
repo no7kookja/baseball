@@ -21,7 +21,7 @@ public class TmsgControl {
 		System.out.println("2. Serializable활용");
 		
 		
-		int num = numInsert();
+		int num = (int)doubleInsert("메뉴");
 		if (num==1) {
 			this.teams = tdmg.txtOpen();
 		} else if(num==2){
@@ -34,11 +34,11 @@ public class TmsgControl {
 		return teams;
 	}
 	
-	public int numInsert(){
-		Scanner s = new Scanner(System.in);
-		int num = s.nextInt();
-		return num;
-	}
+//	public int numInsert(){
+//		Scanner s = new Scanner(System.in);
+//		int num = s.nextInt();
+//		return num;
+//	}
 	
 	
 	
@@ -80,8 +80,8 @@ public class TmsgControl {
 		if (teams!=null) {
 			System.out.println("다음 리스트에서 삭제할 팀 번호를 선택하세요.");
 			teamView();
-			System.out.print("삭제 팀 번호 입력 : ");
-			int deleteTeam = numInsert();
+			
+			int deleteTeam = (int)doubleInsert("삭제 팀 번호");
 			teams = tdmg.teamDelete(deleteTeam);
 			System.out.println("삭제 결과");
 			teamView();

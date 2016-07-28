@@ -3,8 +3,8 @@ package mainMenu;
 import java.io.IOException;
 import java.util.Scanner;
 
+import interfaces.Menu;
 import playerMenu.PlayerMenu;
-import teamMenu.Menu;
 import teamMenu.TeamMenu;
 
 public class MainMenu implements Menu{

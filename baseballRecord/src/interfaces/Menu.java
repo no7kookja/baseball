@@ -1,4 +1,4 @@
-package teamMenu;
+package interfaces;
 
 import java.io.IOException;
 
