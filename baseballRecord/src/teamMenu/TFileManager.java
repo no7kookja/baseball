@@ -9,7 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.StringTokenizer;
 
-public class FileManager {
+public class TFileManager {
 	Team[] teams = new Team[10];
 	
 	FileInputStream fis;
@@ -48,13 +48,13 @@ public class FileManager {
 			fis = new FileInputStream("teamData.txt");
 			ois = new ObjectInputStream(fis);
 			int size = ois.readInt();
-			System.out.println("size ====="+size);
+			System.out.println("=== "+size +" 개의 팀의 정보를 불러왔습니다.===");
 			for (int i = 0; i < size; i++) {
 				teams[i] = (Team)ois.readObject();
 				
 			}
 			teams[0].setSize(size);
-			teams[0].setCount(size);
+		
 
 
 			

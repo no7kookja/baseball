@@ -7,7 +7,7 @@ public class TeamMenu implements Menu{
 	TmsgControl tmsg;
 	TdataManager tdmg;
 	
-	TeamMenu(){
+	public TeamMenu(){
 		tdmg = new TdataManager();
 		tmsg = new TmsgControl(tdmg);
 		
@@ -57,10 +57,10 @@ public class TeamMenu implements Menu{
 		switch (menu) {
 		case FILE_OPEN: tmsg.txtOpen(); break;
 		case FILE_SAVE: tmsg.fileSave(); break;
-		case ADD_TEAM: tmsg.txtOpen(); break;
+		case ADD_TEAM: tmsg.teamAdd(); break;
 		case PRINT_TEAM: tmsg.teamView(); break;
-		case COMPARE_TEAM: tmsg.teamView(); break;
-		case UPDATE_TEAM: tmsg.teamView(); break;
+		case COMPARE_TEAM: tmsg.teamCompare(); break;
+		case UPDATE_TEAM: tmsg.teamUpdate(); break;
 		case DELETE_TEAM: tmsg.teamDelete(); break;
 
 		default:
@@ -77,7 +77,7 @@ public class TeamMenu implements Menu{
 		menuView();
 		int menu = menuNumSelect();
 		if (menu==0) {
-			System.out.println("프로그램 종료.");return false;
+			System.out.println("\n상위 메뉴로!");return false;
 		} 
 		messagePro(menu);
 		
@@ -85,13 +85,7 @@ public class TeamMenu implements Menu{
 	}
 	
 	
-	public static void main(String[] args) throws IOException {
-		TeamMenu tm = new TeamMenu();
-		while (tm.menuLoop()) {
-			
-		}
-
-	}
+	
 	
 	
 
