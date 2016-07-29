@@ -47,7 +47,7 @@ public class MainMenu implements Menu{
 	public void messagePro(int menu) throws IOException {
 		switch (menu) {
 		case 1: while (teamM.menuLoop()) {}	break;
-		case 2: while (teamM.menuLoop()) {}	break;
+		case 2: while (playerM.menuLoop()) {}	break;
 		default:
 			break;
 		}
